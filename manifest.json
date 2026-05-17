@@ -1,0 +1,14 @@
+{
+    "display_name": "Prompt Remote",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "dependencies": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "User",
+    "version": "1.0.0",
+    "homePage": "",
+    "auto_update": false,
+    "generate_interceptor": "PromptRemote_interceptGeneration"
+}

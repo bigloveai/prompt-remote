@@ -1,0 +1,1188 @@
+/* =============================================
+   Prompt Remote - style.css
+   ============================================= */
+
+/* === 색상 변수 === */
+:root {
+    --pr-bg: #f2f2f2;
+    --pr-bg-card: #ffffff;
+    --pr-bg-note: #f2f2f2;
+    --pr-bg-input: #ffffff;
+    --pr-bg-header: #e0e0e0;
+    --pr-bg-btn-primary: #454d53;
+    --pr-bg-btn-primary-hover: #353d43;
+    --pr-bg-btn-secondary: #e8e8e8;
+    --pr-bg-btn-secondary-hover: #d8d8d8;
+    --pr-bg-btn-item: #ffffff;
+    --pr-bg-btn-item-hover: #e8e8e8;
+    --pr-bg-btn-selected: #454d53;
+    --pr-bg-gallery: #f2f2f2;
+    --pr-bg-gallery-hover: #e8e8e8;
+    --pr-text: #292421;
+    --pr-text-secondary: #555;
+    --pr-text-muted: #888;
+    --pr-text-faint: #c5c5c5;
+    --pr-text-btn-primary: #f8f8f8;
+    --pr-text-tab-inactive: #999;
+    --pr-text-tab-hover: #555;
+    --pr-border: #ddd;
+    --pr-border-panel: #aaa;
+    --pr-border-hover: #777;
+    --pr-border-item: #ddd;
+    --pr-border-item-hover: #777;
+    --pr-icon: #aaa;
+    --pr-icon-hover: #666;
+    --pr-icon-close: #c5c5c5;
+    --pr-toggle-off: #aaa;
+    --pr-toggle-on: #454d53;
+    --pr-toggle-disabled: #e8e8e8;
+    --pr-toggle-knob: #fff;
+    --pr-popup-bg: #ffffff;
+    --pr-popup-card: #f2f2f2;
+    --pr-popup-border: #f2f2f2;
+}
+
+/* === 다크 테마 === */
+#prompt-remote-panel.pr-theme-dark,
+#prompt-remote-ext-settings.pr-theme-dark,
+.pr-popup-overlay.pr-theme-dark .pr-popup-dialog {
+    --pr-bg: #2a2a2a;
+    --pr-bg-card: #1e1e1e;
+    --pr-bg-note: #2a2a2a;
+    --pr-bg-input: #1e1e1e;
+    --pr-bg-header: #353535;
+    --pr-bg-btn-primary: #c8c8c8;
+    --pr-bg-btn-primary-hover: #d8d8d8;
+    --pr-bg-btn-secondary: #3a3a3a;
+    --pr-bg-btn-secondary-hover: #454545;
+    --pr-bg-btn-item: #1e1e1e;
+    --pr-bg-btn-item-hover: #3a3a3a;
+    --pr-bg-btn-selected: #c8c8c8;
+    --pr-bg-gallery: #2a2a2a;
+    --pr-bg-gallery-hover: #3a3a3a;
+    --pr-text: #e0e0e0;
+    --pr-text-secondary: #c0c0c0;
+    --pr-text-muted: #888;
+    --pr-text-faint: #666;
+    --pr-text-btn-primary: #222;
+    --pr-text-tab-inactive: #6a6a6a;
+    --pr-text-tab-hover: #c0c0c0;
+    --pr-border: #4a4a4a;
+    --pr-border-panel: #555;
+    --pr-border-hover: #777;
+    --pr-border-item: #4a4a4a;
+    --pr-border-item-hover: #777;
+    --pr-icon: #555;
+    --pr-icon-hover: #aaa;
+    --pr-icon-close: #666;
+    --pr-toggle-off: #555;
+    --pr-toggle-on: #c8c8c8;
+    --pr-toggle-disabled: #3a3a3a;
+    --pr-toggle-knob: #1e1e1e;
+    --pr-popup-bg: #1e1e1e;
+    --pr-popup-card: #2a2a2a;
+    --pr-popup-border: #2a2a2a;
+}
+
+/* === 핑크 테마 === */
+#prompt-remote-panel.pr-theme-pink,
+#prompt-remote-ext-settings.pr-theme-pink,
+.pr-popup-overlay.pr-theme-pink .pr-popup-dialog {
+    --pr-bg: #fde8ef;
+    --pr-bg-card: #fef2f6;
+    --pr-bg-note: #fde8ef;
+    --pr-bg-input: #fef2f6;
+    --pr-bg-header: #f8c8d8;
+    --pr-bg-btn-primary: #e8879f;
+    --pr-bg-btn-primary-hover: #d8778f;
+    --pr-bg-btn-secondary: #f8d8e2;
+    --pr-bg-btn-secondary-hover: #f2c8d5;
+    --pr-bg-btn-item: #fef2f6;
+    --pr-bg-btn-item-hover: #f8d8e2;
+    --pr-bg-btn-selected: #e8879f;
+    --pr-bg-gallery: #fde8ef;
+    --pr-bg-gallery-hover: #f8d8e2;
+    --pr-text: #5a2038;
+    --pr-text-secondary: #7a3050;
+    --pr-text-muted: #c08098;
+    --pr-text-faint: #d8a8b8;
+    --pr-text-btn-primary: #fceef2;
+    --pr-text-tab-inactive: #c890a5;
+    --pr-text-tab-hover: #7a3050;
+    --pr-border: #d0a0b2;
+    --pr-border-panel: #e0b8c5;
+    --pr-border-hover: #aa7088;
+    --pr-border-item: #d0a0b2;
+    --pr-border-item-hover: #aa7088;
+    --pr-icon: #e0b8c5;
+    --pr-icon-hover: #a06078;
+    --pr-icon-close: #d8a8b8;
+    --pr-toggle-off: #e0b8c5;
+    --pr-toggle-on: #e8879f;
+    --pr-toggle-disabled: #f8d8e2;
+    --pr-toggle-knob: #fff;
+    --pr-popup-bg: #fef2f6;
+    --pr-popup-card: #fde8ef;
+    --pr-popup-border: #fde8ef;
+}
+
+/* === 그린 테마 (파스텔) === */
+#prompt-remote-panel.pr-theme-green,
+#prompt-remote-ext-settings.pr-theme-green,
+.pr-popup-overlay.pr-theme-green .pr-popup-dialog {
+    --pr-bg: #e8f5e9;
+    --pr-bg-card: #f1f9f1;
+    --pr-bg-note: #e8f5e9;
+    --pr-bg-input: #f1f9f1;
+    --pr-bg-header: #c8e6c9;
+    --pr-bg-btn-primary: #66a866;
+    --pr-bg-btn-primary-hover: #558e55;
+    --pr-bg-btn-secondary: #d5edd5;
+    --pr-bg-btn-secondary-hover: #c0e0c0;
+    --pr-bg-btn-item: #f1f9f1;
+    --pr-bg-btn-item-hover: #d5edd5;
+    --pr-bg-btn-selected: #66a866;
+    --pr-bg-gallery: #e8f5e9;
+    --pr-bg-gallery-hover: #d5edd5;
+    --pr-text: #2e4d2e;
+    --pr-text-secondary: #3d6b3d;
+    --pr-text-muted: #7aaa7a;
+    --pr-text-faint: #a0c8a0;
+    --pr-text-btn-primary: #edf5ed;
+    --pr-text-tab-inactive: #88b888;
+    --pr-text-tab-hover: #3d6b3d;
+    --pr-border: #90c090;
+    --pr-border-panel: #b0d4b0;
+    --pr-border-hover: #5a9a5a;
+    --pr-border-item: #90c090;
+    --pr-border-item-hover: #5a9a5a;
+    --pr-icon: #b0d4b0;
+    --pr-icon-hover: #5a8a5a;
+    --pr-icon-close: #a0c8a0;
+    --pr-toggle-off: #b0d4b0;
+    --pr-toggle-on: #66a866;
+    --pr-toggle-disabled: #d5edd5;
+    --pr-toggle-knob: #fff;
+    --pr-popup-bg: #f1f9f1;
+    --pr-popup-card: #e8f5e9;
+    --pr-popup-border: #e8f5e9;
+}
+
+/* === 블루 테마 === */
+#prompt-remote-panel.pr-theme-blue,
+#prompt-remote-ext-settings.pr-theme-blue,
+.pr-popup-overlay.pr-theme-blue .pr-popup-dialog {
+    --pr-bg: #e8f2fc;
+    --pr-bg-card: #f2f7fe;
+    --pr-bg-note: #e8f2fc;
+    --pr-bg-input: #f2f7fe;
+    --pr-bg-header: #c4ddf5;
+    --pr-bg-btn-primary: #78aede;
+    --pr-bg-btn-primary-hover: #689ece;
+    --pr-bg-btn-secondary: #d5e8f8;
+    --pr-bg-btn-secondary-hover: #c4dcf2;
+    --pr-bg-btn-item: #f2f7fe;
+    --pr-bg-btn-item-hover: #d5e8f8;
+    --pr-bg-btn-selected: #78aede;
+    --pr-bg-gallery: #e8f2fc;
+    --pr-bg-gallery-hover: #d5e8f8;
+    --pr-text: #2a3d55;
+    --pr-text-secondary: #3d5872;
+    --pr-text-muted: #7a9cb8;
+    --pr-text-faint: #a0c0d5;
+    --pr-text-btn-primary: #eef4fa;
+    --pr-text-tab-inactive: #88acc5;
+    --pr-text-tab-hover: #3d5872;
+    --pr-border: #90b4c8;
+    --pr-border-panel: #b0cede;
+    --pr-border-hover: #5888a8;
+    --pr-border-item: #90b4c8;
+    --pr-border-item-hover: #5888a8;
+    --pr-icon: #b0cede;
+    --pr-icon-hover: #5a7c95;
+    --pr-icon-close: #a0c0d5;
+    --pr-toggle-off: #b0cede;
+    --pr-toggle-on: #78aede;
+    --pr-toggle-disabled: #d5e8f8;
+    --pr-toggle-knob: #fff;
+    --pr-popup-bg: #f2f7fe;
+    --pr-popup-card: #e8f2fc;
+    --pr-popup-border: #e8f2fc;
+}
+
+/* === 라벤더 테마 === */
+#prompt-remote-panel.pr-theme-lavender,
+#prompt-remote-ext-settings.pr-theme-lavender,
+.pr-popup-overlay.pr-theme-lavender .pr-popup-dialog {
+    --pr-bg: #ede7f6;
+    --pr-bg-card: #f3f0fa;
+    --pr-bg-note: #ede7f6;
+    --pr-bg-input: #f3f0fa;
+    --pr-bg-header: #d1c4e9;
+    --pr-bg-btn-primary: #9a84c4;
+    --pr-bg-btn-primary-hover: #8a74b4;
+    --pr-bg-btn-secondary: #ddd5ee;
+    --pr-bg-btn-secondary-hover: #cfc4e4;
+    --pr-bg-btn-item: #f3f0fa;
+    --pr-bg-btn-item-hover: #ddd5ee;
+    --pr-bg-btn-selected: #9a84c4;
+    --pr-bg-gallery: #ede7f6;
+    --pr-bg-gallery-hover: #ddd5ee;
+    --pr-text: #3a2e4d;
+    --pr-text-secondary: #533d6b;
+    --pr-text-muted: #8a7aaa;
+    --pr-text-faint: #b0a0c8;
+    --pr-text-btn-primary: #efecf6;
+    --pr-text-tab-inactive: #9888b8;
+    --pr-text-tab-hover: #533d6b;
+    --pr-border: #a898c0;
+    --pr-border-panel: #beb0d4;
+    --pr-border-hover: #726295;
+    --pr-border-item: #a898c0;
+    --pr-border-item-hover: #726295;
+    --pr-icon: #beb0d4;
+    --pr-icon-hover: #6a5a8a;
+    --pr-icon-close: #b0a0c8;
+    --pr-toggle-off: #beb0d4;
+    --pr-toggle-on: #9a84c4;
+    --pr-toggle-disabled: #ddd5ee;
+    --pr-toggle-knob: #fff;
+    --pr-popup-bg: #f3f0fa;
+    --pr-popup-card: #ede7f6;
+    --pr-popup-border: #ede7f6;
+}
+
+/* === 패널 전체 격리 === */
+
+#prompt-remote-panel,
+#prompt-remote-panel *,
+#prompt-remote-panel *::before,
+#prompt-remote-panel *::after {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: normal !important;
+    line-height: 1.4 !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+}
+
+/* === ST 버튼 간섭 차단 === */
+
+#prompt-remote-panel button {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: none !important;
+    transition: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: inherit !important;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+#prompt-remote-panel button:hover {
+    box-shadow: none !important;
+    transform: none !important;
+    outline: none !important;
+}
+
+#prompt-remote-panel select {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: normal !important;
+    -webkit-text-stroke: 0 !important;
+}
+
+
+/* === 패널 === */
+
+#prompt-remote-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: calc((100dvw - var(--sheldWidth) - 2px) / 2);
+    min-width: 100px;
+    z-index: 1001;
+    background: var(--pr-bg) !important;
+    color: var(--pr-text) !important;
+    font-size: 12px;
+    border-right: 1px solid var(--pr-border-panel) !important;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#prompt-remote-panel.pr-open {
+    display: flex;
+}
+
+/* 스크롤바 숨기기 — 스크롤 기능은 유지, 막대기만 안 보이게 */
+#prompt-remote-panel *,
+.pr-popup-dialog,
+.pr-popup-dialog * {
+    scrollbar-width: none !important;
+}
+
+#prompt-remote-panel *::-webkit-scrollbar,
+.pr-popup-dialog::-webkit-scrollbar,
+.pr-popup-dialog *::-webkit-scrollbar {
+    display: none !important;
+}
+
+.pr-inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+
+/* === 헤더 === */
+
+.pr-header {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+    background: var(--pr-bg-header) !important;
+}
+
+.pr-tab-bar {
+    display: flex;
+    flex: 1;
+}
+
+#prompt-remote-panel .pr-tab-btn {
+    flex: 1;
+    padding: 11px 0;
+    text-align: center;
+    background: transparent !important;
+    color: var(--pr-text-tab-inactive) !important;
+    font-size: 12px;
+    font-weight: 600 !important;
+}
+
+#prompt-remote-panel .pr-tab-btn:hover {
+    color: var(--pr-text-secondary) !important;
+}
+
+#prompt-remote-panel .pr-tab-btn.active {
+    color: var(--pr-text) !important;
+    background: var(--pr-bg) !important;
+}
+
+#prompt-remote-panel .pr-close-btn {
+    padding: 0 12px;
+    background: transparent !important;
+    color: var(--pr-text-faint) !important;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+#prompt-remote-panel .pr-close-btn:hover {
+    color: var(--pr-icon-hover) !important;
+    background: none !important;
+}
+
+
+/* === 탭 콘텐츠 === */
+
+.pr-tab-content {
+    display: none;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.pr-tab-content.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* === 카드 === */
+
+.pr-card {
+    background: var(--pr-bg-card) !important;
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+
+/* === 섹션 헤더 === */
+
+.pr-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#prompt-remote-panel .pr-section-title {
+    font-weight: 600 !important;
+    font-size: 12px;
+    color: var(--pr-text) !important;
+}
+
+#prompt-remote-panel .pr-gear-btn {
+    color: var(--pr-icon) !important;
+    padding: 2px 4px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+#prompt-remote-panel .pr-gear-btn:hover {
+    color: var(--pr-icon-hover) !important;
+    background: none !important;
+}
+
+.pr-section-header:last-child {
+    margin-bottom: 0;
+}
+
+
+/* === 선택 버튼 === */
+
+.pr-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+#prompt-remote-panel .pr-btn-item {
+    padding: 6px 14px;
+    border: 1px solid var(--pr-border) !important;
+    border-radius: 6px;
+    background: var(--pr-bg-card) !important;
+    color: var(--pr-text-secondary) !important;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#prompt-remote-panel .pr-btn-item:hover {
+    background: var(--pr-bg-btn-secondary) !important;
+    border-color: var(--pr-border-hover) !important;
+    color: var(--pr-text) !important;
+}
+
+#prompt-remote-panel .pr-btn-item.selected {
+    background: var(--pr-bg-btn-primary) !important;
+    color: var(--pr-text-btn-primary) !important;
+    border-color: var(--pr-bg-btn-selected) !important;
+}
+
+
+/* === 드롭다운 === */
+
+.pr-dropdown-wrap {
+    width: 100%;
+}
+
+
+/* === 갤러리 === */
+
+.pr-gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+#prompt-remote-panel .pr-gallery-item {
+    width: 42px;
+    height: 42px;
+    border: none !important;
+    border-radius: 10px;
+    background: var(--pr-bg-gallery) !important;
+    color: var(--pr-text-secondary) !important;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#prompt-remote-panel .pr-gallery-item:hover {
+    background: var(--pr-bg-gallery-hover) !important;
+}
+
+#prompt-remote-panel .pr-gallery-item.selected {
+    background: var(--pr-bg-btn-selected) !important;
+    color: var(--pr-text-btn-primary) !important;
+}
+
+#prompt-remote-panel .pr-dropdown-wrap select,
+.pr-popup-dialog .pr-dropdown-wrap select,
+#prompt-remote-ext-settings .pr-dropdown-wrap select {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid var(--pr-border) !important;
+    border-radius: 6px;
+    background: var(--pr-bg-card) !important;
+    color: var(--pr-text) !important;
+    font-size: 12px;
+    cursor: pointer;
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+#prompt-remote-panel .pr-dropdown-wrap select:focus,
+.pr-popup-dialog .pr-dropdown-wrap select:focus,
+#prompt-remote-ext-settings .pr-dropdown-wrap select:focus {
+    border: 1px solid var(--pr-border) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* === 토글 스위치 === */
+
+.pr-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    gap: 10px;
+}
+
+#prompt-remote-panel .pr-toggle-label {
+    font-size: 12px;
+    color: var(--pr-text-secondary) !important;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pr-toggle-switch {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.pr-toggle-switch input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.pr-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--pr-toggle-off) !important;
+    border-radius: 20px;
+    transition: background 0.2s !important;
+}
+
+.pr-toggle-slider::before {
+    content: '';
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--pr-toggle-knob) !important;
+    border-radius: 50%;
+    transition: transform 0.2s !important;
+}
+
+.pr-toggle-switch input:checked + .pr-toggle-slider {
+    background: var(--pr-bg-btn-primary) !important;
+}
+
+.pr-toggle-switch input:checked + .pr-toggle-slider::before {
+    transform: translateX(16px);
+}
+
+.pr-toggle-switch input:disabled + .pr-toggle-slider {
+    background: var(--pr-bg-btn-secondary) !important;
+    cursor: not-allowed;
+}
+
+
+/* === 프리필 === */
+
+.pr-prefill-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#prompt-remote-panel .pr-prefill-preview {
+    flex: 1;
+    font-size: 11px;
+    color: var(--pr-text-muted) !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-style: italic;
+}
+
+
+/* === 빈 상태 === */
+
+#prompt-remote-panel .pr-empty {
+    font-size: 11px;
+    color: var(--pr-text-faint) !important;
+    padding: 2px 0;
+}
+
+
+/* === 노트 보드 - 툴바 === */
+
+.pr-nb-toolbar {
+    display: flex;
+    gap: 6px;
+    padding-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+#prompt-remote-panel .pr-nb-toolbar button {
+    padding: 6px 12px;
+    border: 1px solid var(--pr-border) !important;
+    border-radius: 6px;
+    background: var(--pr-bg-card) !important;
+    color: var(--pr-text-secondary) !important;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#prompt-remote-panel .pr-nb-toolbar button:hover {
+    background: var(--pr-bg-btn-secondary) !important;
+    border-color: var(--pr-border-hover) !important;
+    color: var(--pr-text) !important;
+}
+
+
+/* === 노트 보드 - 그룹 === */
+
+.pr-group {
+    background: var(--pr-bg-card) !important;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.pr-group-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#prompt-remote-panel .pr-group-name {
+    font-weight: 600 !important;
+    font-size: 12px;
+    color: var(--pr-text) !important;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#prompt-remote-panel .pr-collapse-icon {
+    font-size: 10px;
+    color: var(--pr-text-faint) !important;
+    transition: transform 0.2s !important;
+}
+
+
+#prompt-remote-panel .pr-group-meta {
+    display: flex;
+    gap: 10px;
+    padding: 0 14px 8px;
+    font-size: 10px;
+    color: var(--pr-text-faint) !important;
+}
+
+.pr-group-body {
+    padding: 4px 14px 12px;
+}
+
+.pr-group-body.collapsed {
+    display: none;
+}
+
+
+/* === 액션 버튼 === */
+
+.pr-group-actions,
+.pr-note-actions {
+    display: flex;
+    gap: 0;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+#prompt-remote-panel .pr-group-actions button,
+.pr-popup-dialog .pr-group-actions button {
+    color: var(--pr-icon) !important;
+    padding: 2px 3px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#prompt-remote-panel .pr-note-actions button {
+    color: var(--pr-icon) !important;
+    padding: 2px 2px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 그룹 SVG 크기 */
+#prompt-remote-panel .pr-group-actions svg,
+.pr-popup-dialog .pr-group-actions svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* 노트 SVG 크기 */
+#prompt-remote-panel .pr-note-actions svg {
+    width: 14px;
+    height: 14px;
+}
+
+#prompt-remote-panel .pr-group-actions button:hover,
+#prompt-remote-panel .pr-note-actions button:hover,
+.pr-popup-dialog .pr-group-actions button:hover {
+    color: var(--pr-icon-hover) !important;
+    background: none !important;
+}
+
+/* 막힌 버튼 */
+.pr-btn-disabled {
+    opacity: 0.3 !important;
+    cursor: default !important;
+    pointer-events: none;
+}
+
+
+/* === 노트 === */
+
+.pr-note {
+    background: var(--pr-bg) !important;
+    border-radius: 6px;
+    margin: 5px 0;
+}
+
+.pr-note-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+}
+
+#prompt-remote-panel .pr-note-title {
+    flex: 1;
+    font-size: 12px;
+    font-weight: 500 !important;
+    color: var(--pr-text-secondary) !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.pr-note-body {
+    padding: 2px 10px 8px;
+}
+
+#prompt-remote-panel .pr-note-body textarea {
+    min-height: 50px;
+    resize: vertical;
+}
+
+.pr-note-body.collapsed {
+    display: none;
+}
+
+
+/* === 자체 팝업 === */
+
+.pr-popup-overlay {
+    border: none;
+    padding: 20px 16px;
+    background: transparent;
+    max-width: 500px;
+    max-height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overscroll-behavior: contain;
+}
+
+.pr-popup-overlay::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.pr-popup-dialog {
+    background: var(--pr-bg-card) !important;
+    border-radius: 10px;
+    padding: 0;
+    min-width: 320px;
+    max-width: 500px;
+    color: var(--pr-text) !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: normal !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+/* 팝업 내 button ST 간섭 차단 */
+.pr-popup-dialog button {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: none !important;
+    transition: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: inherit !important;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.pr-popup-dialog button:not(.pr-popup-btn):not(.pr-popup-icon-btn):hover {
+    box-shadow: none !important;
+    transform: none !important;
+    outline: none !important;
+    background: none !important;
+}
+
+.pr-popup-dialog *,
+.pr-popup-dialog *::before,
+.pr-popup-dialog *::after {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: normal !important;
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+}
+
+.pr-popup-dialog button {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: none !important;
+    transition: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+.pr-popup-dialog button:hover {
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.pr-popup-title {
+    margin: 0;
+    padding: 16px 20px 12px;
+    font-size: 15px;
+    font-weight: 600 !important;
+    color: var(--pr-text) !important;
+    flex-shrink: 0;
+}
+
+.pr-popup-body {
+    padding: 0 20px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    overscroll-behavior: contain;
+}
+
+.pr-popup-body label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--pr-text-secondary) !important;
+}
+
+.pr-popup-body input[type="checkbox"] {
+    accent-color: var(--pr-toggle-on) !important;
+    background-color: var(--pr-toggle-knob) !important;
+    border-color: var(--pr-border) !important;
+}
+
+.pr-popup-body input[type="checkbox"]:checked {
+    accent-color: var(--pr-toggle-on) !important;
+    background-color: var(--pr-toggle-on) !important;
+}
+
+.pr-popup-body p {
+    margin: 0 0 8px;
+    color: var(--pr-text-muted) !important;
+}
+
+#prompt-remote-panel .pr-input,
+.pr-popup-dialog .pr-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--pr-border) !important;
+    border-radius: 6px;
+    background: var(--pr-bg-card) !important;
+    color: var(--pr-text) !important;
+    font-size: 12px;
+    font-family: inherit !important;
+    box-sizing: border-box;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#prompt-remote-panel .pr-input:hover,
+#prompt-remote-panel .pr-input:focus,
+#prompt-remote-panel .pr-input:active,
+.pr-popup-dialog .pr-input:hover,
+.pr-popup-dialog .pr-input:focus,
+.pr-popup-dialog .pr-input:active {
+    background: var(--pr-bg-card) !important;
+    border: 1px solid var(--pr-border) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#prompt-remote-panel .pr-input::placeholder,
+.pr-popup-dialog .pr-input::placeholder {
+    color: var(--pr-text-faint) !important;
+}
+
+.pr-popup-footer {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    padding: 12px 20px 16px;
+    flex-shrink: 0;
+    background: var(--pr-bg-card) !important;
+    border-radius: 0 0 10px 10px;
+}
+
+.pr-popup-dialog .pr-popup-btn {
+    padding: 8px 18px !important;
+    border-radius: 6px !important;
+    font-size: 13px;
+    cursor: pointer;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: none !important;
+    transition: none !important;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pr-popup-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.pr-popup-dialog .pr-popup-btn-save {
+    background: var(--pr-bg-btn-primary) !important;
+    color: var(--pr-text-btn-primary) !important;
+}
+
+.pr-popup-dialog .pr-popup-btn-save:hover {
+    background: var(--pr-bg-btn-primary-hover) !important;
+}
+
+.pr-popup-dialog .pr-popup-btn-cancel {
+    background: var(--pr-bg-btn-secondary) !important;
+    color: var(--pr-text) !important;
+}
+
+.pr-popup-dialog .pr-popup-btn-cancel:hover {
+    background: var(--pr-bg-btn-secondary-hover) !important;
+}
+
+/* 팝업 카드 (그룹 지침 등) */
+.pr-popup-card {
+    background: var(--pr-popup-card);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 6px;
+    border: none !important;
+}
+
+.pr-popup-card[data-pidx] {
+    cursor: pointer;
+}
+
+.pr-popup-card[data-pidx]:hover {
+    background: var(--pr-bg-btn-secondary);
+}
+
+/* 팝업 목록 (설정 불러오기 등) */
+.pr-popup-list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--pr-popup-border);
+    cursor: pointer;
+}
+
+.pr-popup-list-name {
+    flex: 1;
+    font-size: 12px;
+    color: var(--pr-text) !important;
+}
+
+/* 팝업 내 삭제 버튼 (텍스트박스와 높이 맞춤) */
+.pr-popup-dialog .pr-popup-icon-btn {
+    background: var(--pr-bg-btn-secondary) !important;
+    border: none !important;
+    border-radius: 6px;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: none !important;
+    transition: none !important;
+    cursor: pointer;
+    color: var(--pr-text-secondary) !important;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.pr-popup-dialog .pr-popup-icon-btn:hover {
+    background: var(--pr-bg-btn-secondary-hover) !important;
+}
+
+.pr-popup-dialog .pr-popup-icon-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* === Extensions 관리 패널 === */
+
+#prompt-remote-ext-settings .pr-ext-group {
+    border: 1px solid var(--pr-border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: var(--pr-bg-card);
+}
+
+#prompt-remote-ext-settings .pr-ext-group-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--pr-text);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--pr-border);
+}
+
+#prompt-remote-ext-settings .pr-ext-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+
+#prompt-remote-ext-settings .pr-ext-row > label:first-child {
+    font-size: 12px;
+    color: var(--pr-text) !important;
+}
+
+#prompt-remote-ext-settings .pr-ext-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+}
+
+/* 버튼 그룹 */
+#prompt-remote-ext-settings .pr-ext-btn-group {
+    display: flex;
+    gap: 4px;
+}
+
+#prompt-remote-ext-settings .pr-ext-btn {
+    padding: 4px 10px;
+    border: 1px solid var(--pr-border) !important;
+    border-radius: 6px;
+    background: none !important;
+    color: var(--pr-text-secondary) !important;
+    font-size: 11px;
+    cursor: pointer;
+    box-shadow: none !important;
+    outline: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+#prompt-remote-ext-settings .pr-ext-btn:hover {
+    background: var(--pr-bg-btn-secondary) !important;
+}
+
+#prompt-remote-ext-settings .pr-ext-btn.selected {
+    background: var(--pr-bg-btn-primary) !important;
+    color: var(--pr-text-btn-primary) !important;
+    border-color: var(--pr-bg-btn-primary) !important;
+}
+
+/* 테마 버튼 */
+#prompt-remote-ext-settings .pr-ext-theme-row {
+    display: flex;
+    gap: 6px;
+}
+
+#prompt-remote-ext-settings .pr-ext-theme-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+#prompt-remote-ext-settings .pr-ext-theme-btn:hover {
+    border-color: var(--pr-border);
+}
+
+#prompt-remote-ext-settings .pr-ext-theme-btn.selected {
+    border-color: var(--pr-toggle-on);
+}
+
+
+/* === 모바일 === */
+
+@media screen and (max-width: 1000px) {
+    #prompt-remote-panel {
+        width: 100dvw;
+        height: calc(100dvh - var(--topBarBlockSize));
+        top: var(--topBarBlockSize);
+        bottom: auto;
+    }
+}
