@@ -368,6 +368,10 @@
     color: var(--pr-text-secondary) !important;
 }
 
+#prompt-remote-panel .pr-tab-btn[hidden] {
+    display: none !important;
+}
+
 #prompt-remote-panel .pr-tab-btn.active {
     color: var(--pr-text) !important;
     background: var(--pr-bg) !important;
@@ -696,7 +700,8 @@
     white-space: nowrap;
 }
 
-#prompt-remote-panel .pr-collapse-icon {
+#prompt-remote-panel .pr-collapse-icon,
+.pr-popup-dialog .pr-collapse-icon {
     font-size: 10px;
     color: var(--pr-text-faint) !important;
     transition: transform 0.2s !important;
@@ -816,8 +821,203 @@
     display: none;
 }
 
+/* QR layout uses the existing cards, groups, controls and theme variables. */
+
+#prompt-remote-panel .pr-qr-status-body {
+    min-width: 0;
+    container-type: inline-size;
+}
+
+.pr-qr-status-people {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.pr-qr-status-field {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+    white-space: nowrap;
+}
+
+.pr-qr-status-label {
+    flex: none;
+    color: var(--pr-text-secondary);
+    font-size: 11px;
+}
+
+.pr-qr-status-value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--pr-text);
+}
+
+.pr-qr-status-people > .pr-qr-status-field {
+    flex: 0 1 auto;
+    align-items: baseline;
+}
+
+.pr-qr-status-people > .pr-qr-status-field + .pr-qr-status-field {
+    border-left: 1px solid var(--pr-border);
+    padding-left: 10px;
+}
+
+.pr-qr-status-people .pr-qr-status-label {
+    color: var(--pr-text-muted);
+}
+
+#prompt-remote-panel .pr-qr-status-people .pr-qr-status-value {
+    font-size: 14px;
+    font-weight: 600 !important;
+}
+
+#prompt-remote-panel .pr-qr-status-language {
+    flex: none;
+    margin-left: auto;
+    padding: 3px 7px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 11px;
+    background: var(--pr-bg-btn-primary) !important;
+    color: var(--pr-text-btn-primary) !important;
+}
+
+.pr-qr-status-transmission {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    padding: 5px 7px;
+    border-radius: 5px;
+    background: var(--pr-bg-note);
+}
+
+.pr-qr-status-transmission .pr-qr-status-field + .pr-qr-status-field {
+    border-left: 1px solid var(--pr-border);
+    padding-left: 10px;
+}
+
+.pr-qr-status-transmission .pr-qr-status-label {
+    color: var(--pr-text-muted);
+}
+
+@container (max-width: 236px) {
+    .pr-qr-status-people { gap: 6px; }
+    .pr-qr-status-people > .pr-qr-status-field + .pr-qr-status-field { padding-left: 6px; }
+    #prompt-remote-panel .pr-qr-status-language { padding: 3px 5px; }
+    .pr-qr-status-transmission { padding: 5px; gap: 6px; }
+    .pr-qr-status-transmission .pr-qr-status-field + .pr-qr-status-field { padding-left: 6px; }
+}
+
+#prompt-remote-panel .pr-qr-folder {
+    background: transparent !important;
+    border-radius: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+.pr-qr-folder > .pr-group-header {
+    padding: 4px 0 4px calc(var(--qr-depth) * 12px);
+    flex-wrap: nowrap;
+}
+
+.pr-qr-folder > .pr-group-body {
+    padding: 0;
+}
+
+/* 제목 바로 아래 첫 폴더는 섹션 제목 간격만 쓰고, 최상위 폴더 묶음 사이만 띄움 */
+#prompt-remote-panel .pr-qr-tree > .pr-qr-folder:first-child > .pr-group-header {
+    padding-top: 0;
+}
+
+#prompt-remote-panel .pr-qr-tree > .pr-qr-folder + .pr-qr-folder {
+    margin-top: 8px;
+}
+
+#prompt-remote-panel .pr-qr-folder .pr-group-name {
+    min-width: 0;
+}
+
+#prompt-remote-panel .pr-qr-item {
+    background: transparent !important;
+    margin: 0;
+    position: relative;
+}
+
+.pr-qr-item > .pr-note-header {
+    padding: 2px 0 2px calc(var(--qr-depth) * 12px + 22px);
+    flex-wrap: nowrap;
+}
+
+.pr-qr-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+#prompt-remote-panel .pr-qr-item .pr-note-title {
+    cursor: default;
+}
+
+/* 메모: 클릭하면 QR 아래에 겹쳐 뜨는 말풍선 (아래 줄을 밀지 않음) */
+#prompt-remote-panel .pr-qr-memo {
+    position: absolute;
+    top: 100%;
+    left: calc(var(--qr-depth) * 12px + 22px);
+    right: 0;
+    z-index: 2;
+    padding: 7px 10px;
+    border: 1px solid var(--pr-border) !important;
+    border-radius: 6px;
+    background: var(--pr-bg-note) !important;
+    color: var(--pr-text-secondary) !important;
+    font-size: 12px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#prompt-remote-panel .pr-qr-memo[hidden] {
+    display: none;
+}
+
+.pr-qr-choice span {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+.pr-qr-choice small {
+    color: var(--pr-text-faint);
+    overflow-wrap: anywhere;
+}
+
+.pr-qr-assigned {
+    background: var(--pr-bg-btn-secondary);
+    border-radius: 6px;
+}
+
+.pr-qr-choice:has(input:disabled) {
+    opacity: 0.55;
+    cursor: default;
+}
+
 
 /* === 자체 팝업 === */
+
+.pr-popup-overlay:has(.pr-qr-options) {
+    box-sizing: border-box;
+    max-width: min(500px, 100vw);
+}
+
+.pr-popup-overlay:has(.pr-qr-options) .pr-popup-dialog {
+    min-width: 0;
+    width: 100%;
+}
 
 .pr-popup-overlay {
     border: none;
@@ -921,11 +1121,61 @@
     overscroll-behavior: contain;
 }
 
-.pr-popup-body label {
+.pr-popup-body:last-child {
+    padding-bottom: 16px;
+}
+
+.pr-popup-body,
+.pr-popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pr-popup-body label,
+.pr-popup-body .pr-qr-editor-heading {
     display: block;
-    margin-bottom: 6px;
+    margin: 0;
     font-size: 13px;
     color: var(--pr-text-secondary) !important;
+}
+
+.pr-popup-body .pr-popup-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Popup spacing belongs to the form layout, not native control margins. */
+.pr-popup-dialog .pr-dropdown-wrap select,
+.pr-popup-dialog .pr-input {
+    display: block;
+    margin: 0;
+}
+
+.pr-popup-checklist,
+.pr-popup-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pr-popup-body .pr-popup-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 0;
+    cursor: pointer;
+}
+
+.pr-popup-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pr-popup-body .pr-toggle-row {
+    padding: 0;
 }
 
 .pr-popup-body input[type="checkbox"] {
@@ -940,7 +1190,7 @@
 }
 
 .pr-popup-body p {
-    margin: 0 0 8px;
+    margin: 0;
     color: var(--pr-text-muted) !important;
 }
 
@@ -1029,7 +1279,7 @@
     background: var(--pr-popup-card);
     border-radius: 6px;
     padding: 10px;
-    margin-bottom: 6px;
+    margin-bottom: 0;
     border: none !important;
 }
 
@@ -1058,7 +1308,8 @@
 }
 
 /* 팝업 내 삭제 버튼 (텍스트박스와 높이 맞춤) */
-.pr-popup-dialog .pr-popup-icon-btn {
+.pr-popup-dialog .pr-popup-icon-btn,
+#prompt-remote-panel .pr-qr-actions button {
     background: var(--pr-bg-btn-secondary) !important;
     border: none !important;
     border-radius: 6px;
@@ -1076,14 +1327,141 @@
     box-sizing: border-box;
 }
 
-.pr-popup-dialog .pr-popup-icon-btn:hover {
+.pr-popup-dialog .pr-popup-icon-btn:hover,
+#prompt-remote-panel .pr-qr-actions button:hover {
     background: var(--pr-bg-btn-secondary-hover) !important;
 }
 
-.pr-popup-dialog .pr-popup-icon-btn svg {
+.pr-popup-dialog .pr-popup-icon-btn svg,
+#prompt-remote-panel .pr-qr-actions svg {
     width: 14px;
     height: 14px;
 }
+
+/* QR 줄 안에 들어가도록 같은 버튼을 줄 높이에 맞춤 */
+#prompt-remote-panel .pr-qr-actions button {
+    padding: 3px;
+}
+
+/* === QR 목록 편집 팝업 === */
+
+.pr-popup-overlay:has(.pr-qr-editor) {
+    box-sizing: border-box;
+    max-width: min(760px, 100vw);
+    height: 80vh;
+}
+
+.pr-popup-overlay:has(.pr-qr-editor) .pr-popup-dialog {
+    min-width: 0;
+    max-width: none;
+    width: 100%;
+    height: 100%;
+}
+
+.pr-qr-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-height: 0;
+    container: pr-qr-editor / inline-size;
+}
+
+.pr-qr-editor-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+}
+
+.pr-qr-editor-folders,
+.pr-qr-editor-picker {
+    min-height: 0;
+}
+
+.pr-qr-editor-tree,
+.pr-qr-editor .pr-qr-picker-list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.pr-qr-editor-target {
+    font-size: 12px;
+}
+
+.pr-qr-editor-folder {
+    margin-left: calc(var(--qr-depth) * 12px);
+    cursor: pointer;
+}
+
+.pr-popup-dialog .pr-qr-editor-name {
+    flex: 1;
+    min-width: 0;
+    font-size: 12px;
+    font-weight: 600 !important;
+    overflow-wrap: anywhere;
+}
+
+.pr-popup-dialog .pr-qr-editor-folder.selected {
+    background: var(--pr-bg-btn-primary);
+    color: var(--pr-text-btn-primary) !important;
+}
+
+.pr-qr-editor-item {
+    padding-left: calc(var(--qr-depth) * 12px + 22px);
+    padding-right: 6px;
+}
+
+.pr-qr-editor-item .pr-popup-list-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.pr-qr-dirty {
+    color: var(--pr-text-muted);
+}
+
+.pr-qr-editor-detail {
+    flex: none;
+}
+
+.pr-qr-editor-detail textarea {
+    min-height: 50px;
+    resize: vertical;
+}
+
+.pr-popup-dialog .pr-qr-editor .pr-qr-editor-tabs {
+    display: none;
+    padding: 3px;
+    border-radius: 6px;
+    background: var(--pr-popup-card);
+}
+
+.pr-popup-dialog .pr-qr-editor-tabs button {
+    flex: 1;
+    padding: 6px 0;
+    border-radius: 5px;
+    font-size: 12px;
+    color: var(--pr-text-muted) !important;
+}
+
+/* 고른 탭은 마우스를 올려도(터치 후에도) 바탕을 유지 */
+.pr-popup-dialog .pr-qr-editor-tabs button.selected,
+.pr-popup-dialog .pr-qr-editor-tabs button.selected:hover {
+    background: var(--pr-bg-card) !important;
+    color: var(--pr-text) !important;
+}
+
+/* 좁은 화면: 폴더 / QR 넣기 탭으로 나누고 이름·메모는 아래에 고정 */
+@container pr-qr-editor (max-width: 520px) {
+    .pr-popup-dialog .pr-qr-editor .pr-qr-editor-tabs { display: flex; }
+    .pr-qr-editor-columns { grid-template-columns: minmax(0, 1fr); }
+    .pr-qr-editor[data-tab="folders"] .pr-qr-editor-picker,
+    .pr-qr-editor[data-tab="picker"] .pr-qr-editor-folders { display: none; }
+}
+
 
 /* === Extensions 관리 패널 === */
 
@@ -1153,6 +1531,12 @@
 }
 
 /* 테마 버튼 */
+#prompt-remote-ext-settings .pr-ext-reset-description {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: var(--pr-text-secondary);
+}
+
 #prompt-remote-ext-settings .pr-ext-theme-row {
     display: flex;
     gap: 6px;
